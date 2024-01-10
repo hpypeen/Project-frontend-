@@ -1,0 +1,367 @@
+<!--  making a color have three parts red green blue 
+     hsl property=  hue, saturation, and lightness
+     hsl(number   percentage    percentage) 
+
+     if it is a selector 
+     eg. - main  (comes as it is)
+     if it is a class,elements  (comes with .  i.e.  .class)
+     creating rule in css -- .image1 , .image2 etc.
+
+     Clicking on the navigation links should jump the viewport to the relevant section. However, this jumping can be disorienting for some users.
+
+Select all elements, and set the scroll-behavior to smooth.
+
+Create an html selector and give it a font-size property set to 62.5%. This will set the default font size for your web page to 10px (the browser default is 16px).
+
+This will make it easier for you to work with rem units later, as 2rem would be 20px.
+
+*, ::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  If you wanted to add more social icons, but keep them on the same row, you would need to update grid-template-columns to create additional columns. As an alternative, you can use the grid-auto-flow property.
+
+This property takes either row or column as the first value, with an optional second value of dense. grid-auto-flow uses an auto-placement algorithm to adjust the grid layout. Setting it to column will tell the algorithm to create new columns for content as needed. The dense value allows the algorithm to backtrack and fill holes in the grid with smaller items, which can result in items appearing out of order.
+}
+
+
+Flexbox has a main and cross axis. The main axis is defined by the flex-direction property, which has four possible values:
+
+row (default): horizontal axis with flex items from left to right
+row-reverse: horizontal axis with flex items from right to left
+column: vertical axis with flex items from top to bottom
+column-reverse: vertical axis with flex items from bottom to top
+Note: The axes and directions will be different depending on the text direction. The values shown are for a left-to-right text direction.
+
+Try the different values to see how they affect the layout.
+
+
+    -->
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Markers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+      <div class="marker red">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+      <div class="marker green">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+      <div class="marker blue">
+        <div class="cap"></div>
+        <div class="sleeve"></div>
+      </div>
+    </div>
+  </body>
+</html>  -->
+
+<!---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <label for="first-name">Enter Your First Name: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+      </fieldset>
+      <fieldset>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
+        <label for="terms-and-conditions">
+          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">How did you hear about us?
+          <select id="referrer" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        <label for="bio">Provide a bio:
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html> 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Sheet</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>
+          <span class="flex">
+            <span>AcmeWidgetCorp</span>
+            <span>Balance Sheet</span>
+          </span>
+        </h1>
+        <div id="years" aria-hidden="true">
+          <span class="year">2019</span>
+          <span class="year">2020</span>
+          <span class="year">2021</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>Assets</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th><span class="sr-only year">2019</span></th>
+                <th><span class="sr-only year">2020</span></th>
+                <th class="current"><span class="sr-only year">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
+                <td>$25</td>
+                <td>$30</td>
+                <td class="current">$28</td>
+              </tr>
+              <tr class="data">
+                <th>Checking <span class="description">Our primary transactional account.</span></th>
+                <td>$54</td>
+                <td>$56</td>
+                <td class="current">$53</td>
+              </tr>
+              <tr class="data">
+                <th>Savings <span class="description">Funds set aside for emergencies.</span></th>
+                <td>$500</td>
+                <td>$650</td>
+                <td class="current">$728</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Assets</span></th>
+                <td>$579</td>
+                <td>$736</td>
+                <td class="current">$809</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <caption>Liabilities</caption>
+            <thead>
+              <tr>
+              <td></td>
+              <th><span class="sr-only">2019</span></th>
+              <th><span class="sr-only">2020</span></th>
+              <th><span class="sr-only">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data">
+                <th>Loans <span class="description">The outstanding balance on our startup loan.</span></th>
+                <td>$500</td>
+                <td>$250</td>
+                <td class="current">$0</td>
+              </tr>
+              <tr class="data">
+                <th>Expenses <span class="description">Annual anticipated expenses, such as payroll.</span></th>
+                <td>$200</td>
+                <td>$300</td>
+                <td class="current">$400</td>
+              </tr>
+              <tr class="data">
+                <th>Credit <span class="description">The outstanding balance on our credit card.</span></th>
+                <td>$50</td>
+                <td>$50</td>
+                <td class="current">$75</td>
+              </tr>
+              <tr class="total">
+                <th>Total <span class="sr-only">Liabilities</span></th>
+                <td>$750</td>
+                <td>$600</td>
+                <td class="current">$475</td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <caption>Net Worth</caption>
+            <thead>
+              <tr>
+              <td></td>
+              <th><span class="sr-only">2019</span></th>
+              <th><span class="sr-only">2020</span></th>
+              <th><span class="sr-only">2021</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="total">
+                <th>Total <span class="sr-only">Net Worth</span></th>
+                <td>$-171</td>
+                <td>$136</td>
+                <td class="current">$334</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>  -->
+
+
+
+
+quiz project
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
+    <title>Accessibility Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
+      <h1>HTML/CSS Quiz</h1>
+      <nav>
+        <ul>
+          <li><a href="#student-info" accesskey="s">INFO</a></li>
+          <li><a href="#html-questions" accesskey="s">HTML</a></li>
+          <li><a href="#css-questions" accesskey="s">CSS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+        <section role="region" aria-labelledby="student-info">
+          <h2 id="student-info">Student Info</h2>
+          <div class="info">
+            <label for="student-name">Name:</label>
+            <input type="text" name="student-name" id="student-name" />
+          </div>
+          <div class="info">
+            <label for="student-email">Email:</label>
+            <input type="email" name="student-email" id="student-email" />
+          </div>
+          <div class="info">
+            <label for="birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span></label>
+            <input type="date" name="birth-date" id="birth-date" />
+          </div>
+        </section>
+        <section role="region" aria-labelledby="html-questions">
+          <h2 id="html-questions">HTML</h2>
+          <div class="question-block">
+            <p>1</p>
+            <fieldset class="question" name="html-question-one">
+              <legend>
+                The legend element represents a caption for the content of its
+                parent fieldset element
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+          <div class="question-block">
+            <p>2</p>
+            <fieldset class="question" name="html-question-two">
+              <legend>
+                A label element nesting an input element is required to have a
+                for attribute with the same value as the input's id
+              </legend>
+              <ul class="answers-list">
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" />
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" />
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <section role="region" aria-labelledby="css-questions">
+          <h2 id="css-questions">CSS</h2>
+          <div class="formrow">
+            <div class="question-block">
+              <label for="customer">Are you a frontend developer?</label>
+            </div>
+            <div class="answer">
+              <select name="customer" id="customer" required>
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-questions">Do you have any questions:</label>
+            </div>
+            <div class="answer">
+              <textarea id="css-questions" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox..."></textarea>
+            </div>
+          </div>
+        </section>
+        <button type="submit">Send</button>
+      </form>
+    </main>
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br />
+        San Francisco<br />
+        California<br />
+        USA
+      </address>
+    </footer>
+  </body>
+</html>
+
